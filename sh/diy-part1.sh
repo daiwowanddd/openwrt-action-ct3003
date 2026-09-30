@@ -18,3 +18,5 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
 echo "src-git openclash https://github.com/vernesong/OpenClash.git;master" >> "feeds.conf.default"
+echo "src-git luci-theme-argon https://github.com/jerrykuku/luci-theme-argon.git;master" >> "feeds.conf.default"
+echo "src-git luci-app-argon-config https://github.com/jerrykuku/luci-app-argon-config.git;master" >> "feeds.conf.default"
