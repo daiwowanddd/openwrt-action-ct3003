@@ -10,19 +10,19 @@
 # See /LICENSE for more information.
 #
 
-name: ct3003 24.10
+name: ct3003 25.12test
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
-  REPO_BRANCH: openwrt-24.10-6.6
+  REPO_URL: https://github.com/chasey-dev/immortalwrt-mt798x-rebase
+  REPO_BRANCH: 25.12
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/ct3003.config
+  CONFIG_FILE: config/ct3003test.config
   DIY_P1_SH: sh/diy-part1.sh
-  DIY_P2_SH: sh/diy-part2.sh
+  DIY_P2_SH: sh/diy-part21.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -129,7 +129,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=ct3003-24.10-$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
+        echo "release_tag=ct3003-25.12-$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
         touch release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
